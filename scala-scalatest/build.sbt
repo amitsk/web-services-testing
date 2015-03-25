@@ -12,6 +12,8 @@ libraryDependencies += "org.pegdown" % "pegdown" % "1.5.0"
 
 libraryDependencies += "com.jayway.restassured" % "rest-assured" % "2.4.0"
 
+libraryDependencies += "com.jayway.restassured" % "json-schema-validator" % "2.4.0"
+
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.5.1"
 
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.5.1"
