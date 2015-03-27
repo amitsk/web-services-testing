@@ -4,6 +4,8 @@ scalaVersion := "2.11.5"
 
 version := "1.0"
 
+libraryDependencies += "io.spray" %%  "spray-json" % "1.3.1"
+
 libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4"
 
 libraryDependencies += "org.scalacheck" % "scalacheck_2.11" % "1.12.2"

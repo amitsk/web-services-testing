@@ -10,7 +10,7 @@ import com.jayway.restassured.matcher.RestAssuredMatchers._
 import com.jayway.restassured.module.jsv.JsonSchemaValidator._
 /**
  */
-class ReadTodoSpec extends BaseWebserviceSpec {
+class ReadOperationsSpec extends BaseWebserviceSpec {
   val todoJsonSchema = "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://jsonschema.net\",\"type\":\"object\",\"properties\":{\"name\":{\"id\":\"http://jsonschema.net/name\",\"type\":\"string\"},\"task\":{\"id\":\"http://jsonschema.net/task\",\"type\":\"string\"}},\"required\":[\"name\",\"task\"]}"
 
   RestAssured.baseURI = env.getOrElse("baseUri","http://localhost:8080")
@@ -49,10 +49,10 @@ class ReadTodoSpec extends BaseWebserviceSpec {
         Given("We have a TODO service running ")
         val requestSpecification = RestAssured.given().log().all().header("Accept-Encoding","gzip, deflate")
 
-        When(s"We request the  TODO we want ${str}")
+        When(s"We request the  TODO  demo-${str}")
         val response = requestSpecification.get(s"/todo/demo-${str}").then().log().all()
 
-        Then("We get back the TODO we created")
+        Then("We get back the TODO we created and check if they confirm to our schema")
         response.assertThat().statusCode( 200 ).body(matchesJsonSchema(todoJsonSchema))
         val extractableResponse: ExtractableResponse[Response] = response.assertThat().extract()
         assert( extractableResponse.jsonPath().get[String]("name") === s"demo-${str}" )
