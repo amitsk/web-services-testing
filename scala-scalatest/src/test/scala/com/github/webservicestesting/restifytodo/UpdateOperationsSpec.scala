@@ -1,22 +1,19 @@
 package com.github.webservicestesting.restifytodo
 
-import com.github.webservicetesting.restingtodo.{TodoItemJsonProtocol, TodoItem}
-import TodoItemJsonProtocol._
+import com.github.webservicetesting.restingtodo.TodoItem
 import com.jayway.restassured.RestAssured
-import com.jayway.restassured.response.{ValidatableResponse, ExtractableResponse, Response}
 import org.hamcrest.CoreMatchers
-import spray.json._
 
 /**
  * Created by amit on 3/24/15.
  */
 class UpdateOperationsSpec extends BaseWebserviceSpec {
-  val todoId = "demo-one"
+  val todoId = "update-todo"
   val oldTask = "buy milk"
   val newTask = "Do the laundry"
 
-  val todoString = TodoItem(todoId,oldTask).toJson.toString()
-  val newTodoString = TodoItem(todoId,newTask).toJson.toString()
+  val todoString =  JsonUtil.toJson( TodoItem(todoId,oldTask))
+  val newTodoString = JsonUtil.toJson(TodoItem(todoId,newTask))
 
   before {
     RestAssured.given().log().all().delete("/todo").then().statusCode(204)

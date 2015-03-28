@@ -2,7 +2,6 @@ package com.github.webservicestesting.restifytodo
 
 import org.scalatest.prop.PropertyChecks
 import org.scalatest._
-import scala.sys
 
 /**
  * Created by amit on 3/24/15.

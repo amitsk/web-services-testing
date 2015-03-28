@@ -1,13 +1,11 @@
 package com.github.webservicestesting.restifytodo
 
+import com.github.webservicetesting.restingtodo.TodoItem
 import com.jayway.restassured.RestAssured
-import com.jayway.restassured.response.{ValidatableResponse, ExtractableResponse, Response}
-
-import scala.collection.mutable
-import scala.sys._
-import com.jayway.restassured.RestAssured._
-import com.jayway.restassured.matcher.RestAssuredMatchers._
 import com.jayway.restassured.module.jsv.JsonSchemaValidator._
+import com.jayway.restassured.response.{ExtractableResponse, Response}
+
+import scala.sys._
 /**
  */
 class ReadOperationsSpec extends BaseWebserviceSpec {
@@ -15,10 +13,14 @@ class ReadOperationsSpec extends BaseWebserviceSpec {
 
   RestAssured.baseURI = env.getOrElse("baseUri","http://localhost:8080")
 
+  def createTodoJson( nm:String, tsk:String):String = {
+    JsonUtil.toJson( TodoItem(nm, tsk))
+  }
+
   before {
     //Create multiple records.
     RestAssured.given().log().all().delete("/todo").then().statusCode(204)
-    Vector("{\"name\":\"demo-one\",\"task\":\"buy one\"}","{\"name\":\"demo-two\",\"task\":\"buy two\"}","{\"name\":\"demo-three\",\"task\":\"buy three\"}").foreach(
+    Vector( createTodoJson("demo-one","buy one"),createTodoJson("demo-two","buy two"),createTodoJson("demo-three","buy three")).foreach(
       RestAssured.given().log().all().header("Content-Type","application/json"). body(_).post("/todo").then().statusCode(201)
     )
   }
@@ -39,7 +41,6 @@ class ReadOperationsSpec extends BaseWebserviceSpec {
       val buffer = listOfTodos //Implicit conversions
       buffer should contain allOf("demo-one","demo-two","demo-three")
       Thread.sleep(1000)
-
     }
 
     Vector("one","two","three").foreach(  (str : String)  =>
