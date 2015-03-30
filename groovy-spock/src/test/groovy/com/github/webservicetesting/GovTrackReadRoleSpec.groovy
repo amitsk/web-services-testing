@@ -2,8 +2,6 @@ package com.github.webservicetesting
 
 import org.junit.experimental.categories.Category
 import spock.lang.Narrative
-import spock.lang.Specification
-
 
 /**
  * https://www.govtrack.us/api/v2/role?current=true&format=json&state=OR
@@ -12,7 +10,7 @@ import spock.lang.Specification
 @Narrative("""
 As a contituent, I need to know the names of the members of Congress for my state
 """)
-@Category( BaseSpecification.GovTrackService )
+@Category( GovTrackServiceTests )
 class GovTrackReadRoleSpec   extends BaseSpecification {
 
 }

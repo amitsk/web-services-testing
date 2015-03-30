@@ -1,7 +1,5 @@
 package com.github.webservicetesting
 
-import groovy.util.logging.Log
-import groovy.util.logging.Slf4j
 import org.junit.experimental.categories.Category
 import spock.lang.Ignore
 import spock.lang.Narrative
@@ -14,7 +12,7 @@ import spock.lang.Narrative
  */
 
 @Ignore
-@Category( BaseSpecification.TodoService )
+@Category( TodoServiceTests )
 @Narrative("""
 As a user I can create, update and delete a TodoItem
 """)
