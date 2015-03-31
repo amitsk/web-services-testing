@@ -3,6 +3,8 @@ package com.github.webservicetesting
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.typesafe.config.Config
 import groovy.util.logging.Log
+import groovy.util.logging.Log4j
+import groovy.util.logging.Slf4j
 import spock.lang.Shared
 import spock.lang.Specification
 import com.typesafe.config.ConfigFactory
@@ -11,7 +13,7 @@ import com.typesafe.config.ConfigFactory
 /**
  * Created by amit on 3/29/15.
  */
-@Log
+@Slf4j
 class BaseSpecification extends Specification {
     @Shared Config config
     @Shared ObjectMapper objectMapper = new ObjectMapper()

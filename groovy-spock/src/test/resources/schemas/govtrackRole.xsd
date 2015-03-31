@@ -1,0 +1,82 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="meta">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:byte" name="limit"/>
+                            <xs:element type="xs:byte" name="offset"/>
+                            <xs:element type="xs:byte" name="total_count"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="objects">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="item" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="caucus"/>
+                                        <xs:element name="congress_numbers">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:byte" name="item" maxOccurs="unbounded"
+                                                                minOccurs="0"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="current"/>
+                                        <xs:element type="xs:string" name="description"/>
+                                        <xs:element type="xs:string" name="district"/>
+                                        <xs:element type="xs:date" name="enddate"/>
+                                        <xs:element type="xs:int" name="id"/>
+                                        <xs:element type="xs:string" name="leadership_title"/>
+                                        <xs:element type="xs:string" name="party"/>
+                                        <xs:element name="person">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="bioguideid"/>
+                                                    <xs:element type="xs:date" name="birthday"/>
+                                                    <xs:element type="xs:int" name="cspanid"/>
+                                                    <xs:element type="xs:string" name="firstname"/>
+                                                    <xs:element type="xs:string" name="gender"/>
+                                                    <xs:element type="xs:string" name="gender_label"/>
+                                                    <xs:element type="xs:int" name="id"/>
+                                                    <xs:element type="xs:string" name="lastname"/>
+                                                    <xs:element type="xs:string" name="link"/>
+                                                    <xs:element type="xs:string" name="middlename"/>
+                                                    <xs:element type="xs:string" name="name"/>
+                                                    <xs:element type="xs:string" name="namemod"/>
+                                                    <xs:element type="xs:string" name="nickname"/>
+                                                    <xs:element type="xs:string" name="osid"/>
+                                                    <xs:element type="xs:int" name="pvsid"/>
+                                                    <xs:element type="xs:string" name="sortname"/>
+                                                    <xs:element type="xs:string" name="twitterid"/>
+                                                    <xs:element type="xs:string" name="youtubeid"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="phone"/>
+                                        <xs:element type="xs:string" name="role_type"/>
+                                        <xs:element type="xs:string" name="role_type_label"/>
+                                        <xs:element type="xs:string" name="senator_class"/>
+                                        <xs:element type="xs:string" name="senator_class_label" minOccurs="0"/>
+                                        <xs:element type="xs:string" name="senator_rank"/>
+                                        <xs:element type="xs:string" name="senator_rank_label" minOccurs="0"/>
+                                        <xs:element type="xs:date" name="startdate"/>
+                                        <xs:element type="xs:string" name="state"/>
+                                        <xs:element type="xs:string" name="title"/>
+                                        <xs:element type="xs:string" name="title_long"/>
+                                        <xs:element type="xs:anyURI" name="website"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

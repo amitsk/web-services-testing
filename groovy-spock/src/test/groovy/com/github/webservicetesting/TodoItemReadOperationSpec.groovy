@@ -3,6 +3,7 @@ package com.github.webservicetesting
 import com.jayway.restassured.RestAssured
 import com.jayway.restassured.http.ContentType
 import groovy.util.logging.Log
+import groovy.util.logging.Slf4j
 import org.junit.experimental.categories.Category
 import spock.lang.Narrative
 import spock.lang.Shared
@@ -15,9 +16,10 @@ import spock.lang.Shared
 import spock.lang.Unroll
 
 import static com.jayway.restassured.RestAssured.given
+import static com.jayway.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath
 import static org.hamcrest.core.IsEqual.equalTo
 
-@Log
+@Slf4j
 @Category(TodoServiceTests)
 @Narrative("""
 As a contituent, I need to know the names of the members of Congress for my state
@@ -45,10 +47,12 @@ class TodoItemReadOperationSpec extends BaseSpecification {
     }
 
     @Unroll
-    def "Read the todoItem #itemName and get back task #"() {
+    def "Read the todoItem #itemName and get back task #taskName"() {
         expect:
           given().header("Accept-Encoding", "gzip.deflate").log().all()
-                  .when().get("/todo/" + itemName).then().log().all().statusCode( 200 ).and().body("task",equalTo(taskName))
+                  .when().get("/todo/" + itemName).then().log().all().statusCode( 200 )
+                  .and().body(matchesJsonSchemaInClasspath("schemas/todoItem.json"))
+                  .and().body("task",equalTo(taskName))
         where:
           itemName << listOfTodoItems.collect({ it.name })
           taskName << listOfTodoItems.collect({ it.task })

@@ -1,0 +1,1224 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://jsonschema.net",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "id": "http://jsonschema.net/meta",
+      "type": "object",
+      "properties": {
+        "limit": {
+          "id": "http://jsonschema.net/meta/limit",
+          "type": "integer"
+        },
+        "offset": {
+          "id": "http://jsonschema.net/meta/offset",
+          "type": "integer"
+        },
+        "total_count": {
+          "id": "http://jsonschema.net/meta/total_count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "limit",
+        "offset",
+        "total_count"
+      ]
+    },
+    "objects": {
+      "id": "http://jsonschema.net/objects",
+      "type": "array",
+      "items": [
+        {
+          "id": "http://jsonschema.net/objects/0",
+          "type": "object",
+          "properties": {
+            "caucus": {
+              "id": "http://jsonschema.net/objects/0/caucus",
+              "type": "null"
+            },
+            "congress_numbers": {
+              "id": "http://jsonschema.net/objects/0/congress_numbers",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http://jsonschema.net/objects/0/congress_numbers/0",
+                  "type": "integer"
+                },
+                {
+                  "id": "http://jsonschema.net/objects/0/congress_numbers/1",
+                  "type": "integer"
+                },
+                {
+                  "id": "http://jsonschema.net/objects/0/congress_numbers/2",
+                  "type": "integer"
+                }
+              ]
+            },
+            "current": {
+              "id": "http://jsonschema.net/objects/0/current",
+              "type": "boolean"
+            },
+            "description": {
+              "id": "http://jsonschema.net/objects/0/description",
+              "type": "string"
+            },
+            "district": {
+              "id": "http://jsonschema.net/objects/0/district",
+              "type": "null"
+            },
+            "enddate": {
+              "id": "http://jsonschema.net/objects/0/enddate",
+              "type": "string"
+            },
+            "id": {
+              "id": "http://jsonschema.net/objects/0/id",
+              "type": "integer"
+            },
+            "leadership_title": {
+              "id": "http://jsonschema.net/objects/0/leadership_title",
+              "type": "null"
+            },
+            "party": {
+              "id": "http://jsonschema.net/objects/0/party",
+              "type": "string"
+            },
+            "person": {
+              "id": "http://jsonschema.net/objects/0/person",
+              "type": "object",
+              "properties": {
+                "bioguideid": {
+                  "id": "http://jsonschema.net/objects/0/person/bioguideid",
+                  "type": "string"
+                },
+                "birthday": {
+                  "id": "http://jsonschema.net/objects/0/person/birthday",
+                  "type": "string"
+                },
+                "cspanid": {
+                  "id": "http://jsonschema.net/objects/0/person/cspanid",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/objects/0/person/firstname",
+                  "type": "string"
+                },
+                "gender": {
+                  "id": "http://jsonschema.net/objects/0/person/gender",
+                  "type": "string"
+                },
+                "gender_label": {
+                  "id": "http://jsonschema.net/objects/0/person/gender_label",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "http://jsonschema.net/objects/0/person/id",
+                  "type": "integer"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/objects/0/person/lastname",
+                  "type": "string"
+                },
+                "link": {
+                  "id": "http://jsonschema.net/objects/0/person/link",
+                  "type": "string"
+                },
+                "middlename": {
+                  "id": "http://jsonschema.net/objects/0/person/middlename",
+                  "type": "string"
+                },
+                "name": {
+                  "id": "http://jsonschema.net/objects/0/person/name",
+                  "type": "string"
+                },
+                "namemod": {
+                  "id": "http://jsonschema.net/objects/0/person/namemod",
+                  "type": "string"
+                },
+                "nickname": {
+                  "id": "http://jsonschema.net/objects/0/person/nickname",
+                  "type": "string"
+                },
+                "osid": {
+                  "id": "http://jsonschema.net/objects/0/person/osid",
+                  "type": "string"
+                },
+                "pvsid": {
+                  "id": "http://jsonschema.net/objects/0/person/pvsid",
+                  "type": "string"
+                },
+                "sortname": {
+                  "id": "http://jsonschema.net/objects/0/person/sortname",
+                  "type": "string"
+                },
+                "twitterid": {
+                  "id": "http://jsonschema.net/objects/0/person/twitterid",
+                  "type": "string"
+                },
+                "youtubeid": {
+                  "id": "http://jsonschema.net/objects/0/person/youtubeid",
+                  "type": "string"
+                }
+              }
+            },
+            "phone": {
+              "id": "http://jsonschema.net/objects/0/phone",
+              "type": "string"
+            },
+            "role_type": {
+              "id": "http://jsonschema.net/objects/0/role_type",
+              "type": "string"
+            },
+            "role_type_label": {
+              "id": "http://jsonschema.net/objects/0/role_type_label",
+              "type": "string"
+            },
+            "senator_class": {
+              "id": "http://jsonschema.net/objects/0/senator_class",
+              "type": "string"
+            },
+            "senator_class_label": {
+              "id": "http://jsonschema.net/objects/0/senator_class_label",
+              "type": "string"
+            },
+            "senator_rank": {
+              "id": "http://jsonschema.net/objects/0/senator_rank",
+              "type": "string"
+            },
+            "senator_rank_label": {
+              "id": "http://jsonschema.net/objects/0/senator_rank_label",
+              "type": "string"
+            },
+            "startdate": {
+              "id": "http://jsonschema.net/objects/0/startdate",
+              "type": "string"
+            },
+            "state": {
+              "id": "http://jsonschema.net/objects/0/state",
+              "type": "string"
+            },
+            "title": {
+              "id": "http://jsonschema.net/objects/0/title",
+              "type": "string"
+            },
+            "title_long": {
+              "id": "http://jsonschema.net/objects/0/title_long",
+              "type": "string"
+            },
+            "website": {
+              "id": "http://jsonschema.net/objects/0/website",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "id": "http://jsonschema.net/objects/1",
+          "type": "object",
+          "properties": {
+            "caucus": {
+              "id": "http://jsonschema.net/objects/1/caucus",
+              "type": "null"
+            },
+            "congress_numbers": {
+              "id": "http://jsonschema.net/objects/1/congress_numbers",
+              "type": "array",
+              "items": {
+                "id": "http://jsonschema.net/objects/1/congress_numbers/0",
+                "type": "integer"
+              }
+            },
+            "current": {
+              "id": "http://jsonschema.net/objects/1/current",
+              "type": "boolean"
+            },
+            "description": {
+              "id": "http://jsonschema.net/objects/1/description",
+              "type": "string"
+            },
+            "district": {
+              "id": "http://jsonschema.net/objects/1/district",
+              "type": "integer"
+            },
+            "enddate": {
+              "id": "http://jsonschema.net/objects/1/enddate",
+              "type": "string"
+            },
+            "id": {
+              "id": "http://jsonschema.net/objects/1/id",
+              "type": "integer"
+            },
+            "leadership_title": {
+              "id": "http://jsonschema.net/objects/1/leadership_title",
+              "type": "null"
+            },
+            "party": {
+              "id": "http://jsonschema.net/objects/1/party",
+              "type": "string"
+            },
+            "person": {
+              "id": "http://jsonschema.net/objects/1/person",
+              "type": "object",
+              "properties": {
+                "bioguideid": {
+                  "id": "http://jsonschema.net/objects/1/person/bioguideid",
+                  "type": "string"
+                },
+                "birthday": {
+                  "id": "http://jsonschema.net/objects/1/person/birthday",
+                  "type": "string"
+                },
+                "cspanid": {
+                  "id": "http://jsonschema.net/objects/1/person/cspanid",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/objects/1/person/firstname",
+                  "type": "string"
+                },
+                "gender": {
+                  "id": "http://jsonschema.net/objects/1/person/gender",
+                  "type": "string"
+                },
+                "gender_label": {
+                  "id": "http://jsonschema.net/objects/1/person/gender_label",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "http://jsonschema.net/objects/1/person/id",
+                  "type": "integer"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/objects/1/person/lastname",
+                  "type": "string"
+                },
+                "link": {
+                  "id": "http://jsonschema.net/objects/1/person/link",
+                  "type": "string"
+                },
+                "middlename": {
+                  "id": "http://jsonschema.net/objects/1/person/middlename",
+                  "type": "string"
+                },
+                "name": {
+                  "id": "http://jsonschema.net/objects/1/person/name",
+                  "type": "string"
+                },
+                "namemod": {
+                  "id": "http://jsonschema.net/objects/1/person/namemod",
+                  "type": "string"
+                },
+                "nickname": {
+                  "id": "http://jsonschema.net/objects/1/person/nickname",
+                  "type": "string"
+                },
+                "osid": {
+                  "id": "http://jsonschema.net/objects/1/person/osid",
+                  "type": "string"
+                },
+                "pvsid": {
+                  "id": "http://jsonschema.net/objects/1/person/pvsid",
+                  "type": "string"
+                },
+                "sortname": {
+                  "id": "http://jsonschema.net/objects/1/person/sortname",
+                  "type": "string"
+                },
+                "twitterid": {
+                  "id": "http://jsonschema.net/objects/1/person/twitterid",
+                  "type": "string"
+                },
+                "youtubeid": {
+                  "id": "http://jsonschema.net/objects/1/person/youtubeid",
+                  "type": "string"
+                }
+              }
+            },
+            "phone": {
+              "id": "http://jsonschema.net/objects/1/phone",
+              "type": "string"
+            },
+            "role_type": {
+              "id": "http://jsonschema.net/objects/1/role_type",
+              "type": "string"
+            },
+            "role_type_label": {
+              "id": "http://jsonschema.net/objects/1/role_type_label",
+              "type": "string"
+            },
+            "senator_class": {
+              "id": "http://jsonschema.net/objects/1/senator_class",
+              "type": "null"
+            },
+            "senator_rank": {
+              "id": "http://jsonschema.net/objects/1/senator_rank",
+              "type": "null"
+            },
+            "startdate": {
+              "id": "http://jsonschema.net/objects/1/startdate",
+              "type": "string"
+            },
+            "state": {
+              "id": "http://jsonschema.net/objects/1/state",
+              "type": "string"
+            },
+            "title": {
+              "id": "http://jsonschema.net/objects/1/title",
+              "type": "string"
+            },
+            "title_long": {
+              "id": "http://jsonschema.net/objects/1/title_long",
+              "type": "string"
+            },
+            "website": {
+              "id": "http://jsonschema.net/objects/1/website",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "id": "http://jsonschema.net/objects/2",
+          "type": "object",
+          "properties": {
+            "caucus": {
+              "id": "http://jsonschema.net/objects/2/caucus",
+              "type": "null"
+            },
+            "congress_numbers": {
+              "id": "http://jsonschema.net/objects/2/congress_numbers",
+              "type": "array",
+              "items": {
+                "id": "http://jsonschema.net/objects/2/congress_numbers/0",
+                "type": "integer"
+              }
+            },
+            "current": {
+              "id": "http://jsonschema.net/objects/2/current",
+              "type": "boolean"
+            },
+            "description": {
+              "id": "http://jsonschema.net/objects/2/description",
+              "type": "string"
+            },
+            "district": {
+              "id": "http://jsonschema.net/objects/2/district",
+              "type": "integer"
+            },
+            "enddate": {
+              "id": "http://jsonschema.net/objects/2/enddate",
+              "type": "string"
+            },
+            "id": {
+              "id": "http://jsonschema.net/objects/2/id",
+              "type": "integer"
+            },
+            "leadership_title": {
+              "id": "http://jsonschema.net/objects/2/leadership_title",
+              "type": "null"
+            },
+            "party": {
+              "id": "http://jsonschema.net/objects/2/party",
+              "type": "string"
+            },
+            "person": {
+              "id": "http://jsonschema.net/objects/2/person",
+              "type": "object",
+              "properties": {
+                "bioguideid": {
+                  "id": "http://jsonschema.net/objects/2/person/bioguideid",
+                  "type": "string"
+                },
+                "birthday": {
+                  "id": "http://jsonschema.net/objects/2/person/birthday",
+                  "type": "string"
+                },
+                "cspanid": {
+                  "id": "http://jsonschema.net/objects/2/person/cspanid",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/objects/2/person/firstname",
+                  "type": "string"
+                },
+                "gender": {
+                  "id": "http://jsonschema.net/objects/2/person/gender",
+                  "type": "string"
+                },
+                "gender_label": {
+                  "id": "http://jsonschema.net/objects/2/person/gender_label",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "http://jsonschema.net/objects/2/person/id",
+                  "type": "integer"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/objects/2/person/lastname",
+                  "type": "string"
+                },
+                "link": {
+                  "id": "http://jsonschema.net/objects/2/person/link",
+                  "type": "string"
+                },
+                "middlename": {
+                  "id": "http://jsonschema.net/objects/2/person/middlename",
+                  "type": "string"
+                },
+                "name": {
+                  "id": "http://jsonschema.net/objects/2/person/name",
+                  "type": "string"
+                },
+                "namemod": {
+                  "id": "http://jsonschema.net/objects/2/person/namemod",
+                  "type": "string"
+                },
+                "nickname": {
+                  "id": "http://jsonschema.net/objects/2/person/nickname",
+                  "type": "string"
+                },
+                "osid": {
+                  "id": "http://jsonschema.net/objects/2/person/osid",
+                  "type": "string"
+                },
+                "pvsid": {
+                  "id": "http://jsonschema.net/objects/2/person/pvsid",
+                  "type": "string"
+                },
+                "sortname": {
+                  "id": "http://jsonschema.net/objects/2/person/sortname",
+                  "type": "string"
+                },
+                "twitterid": {
+                  "id": "http://jsonschema.net/objects/2/person/twitterid",
+                  "type": "string"
+                },
+                "youtubeid": {
+                  "id": "http://jsonschema.net/objects/2/person/youtubeid",
+                  "type": "string"
+                }
+              }
+            },
+            "phone": {
+              "id": "http://jsonschema.net/objects/2/phone",
+              "type": "string"
+            },
+            "role_type": {
+              "id": "http://jsonschema.net/objects/2/role_type",
+              "type": "string"
+            },
+            "role_type_label": {
+              "id": "http://jsonschema.net/objects/2/role_type_label",
+              "type": "string"
+            },
+            "senator_class": {
+              "id": "http://jsonschema.net/objects/2/senator_class",
+              "type": "null"
+            },
+            "senator_rank": {
+              "id": "http://jsonschema.net/objects/2/senator_rank",
+              "type": "null"
+            },
+            "startdate": {
+              "id": "http://jsonschema.net/objects/2/startdate",
+              "type": "string"
+            },
+            "state": {
+              "id": "http://jsonschema.net/objects/2/state",
+              "type": "string"
+            },
+            "title": {
+              "id": "http://jsonschema.net/objects/2/title",
+              "type": "string"
+            },
+            "title_long": {
+              "id": "http://jsonschema.net/objects/2/title_long",
+              "type": "string"
+            },
+            "website": {
+              "id": "http://jsonschema.net/objects/2/website",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "id": "http://jsonschema.net/objects/3",
+          "type": "object",
+          "properties": {
+            "caucus": {
+              "id": "http://jsonschema.net/objects/3/caucus",
+              "type": "null"
+            },
+            "congress_numbers": {
+              "id": "http://jsonschema.net/objects/3/congress_numbers",
+              "type": "array",
+              "items": {
+                "id": "http://jsonschema.net/objects/3/congress_numbers/0",
+                "type": "integer"
+              }
+            },
+            "current": {
+              "id": "http://jsonschema.net/objects/3/current",
+              "type": "boolean"
+            },
+            "description": {
+              "id": "http://jsonschema.net/objects/3/description",
+              "type": "string"
+            },
+            "district": {
+              "id": "http://jsonschema.net/objects/3/district",
+              "type": "integer"
+            },
+            "enddate": {
+              "id": "http://jsonschema.net/objects/3/enddate",
+              "type": "string"
+            },
+            "id": {
+              "id": "http://jsonschema.net/objects/3/id",
+              "type": "integer"
+            },
+            "leadership_title": {
+              "id": "http://jsonschema.net/objects/3/leadership_title",
+              "type": "null"
+            },
+            "party": {
+              "id": "http://jsonschema.net/objects/3/party",
+              "type": "string"
+            },
+            "person": {
+              "id": "http://jsonschema.net/objects/3/person",
+              "type": "object",
+              "properties": {
+                "bioguideid": {
+                  "id": "http://jsonschema.net/objects/3/person/bioguideid",
+                  "type": "string"
+                },
+                "birthday": {
+                  "id": "http://jsonschema.net/objects/3/person/birthday",
+                  "type": "string"
+                },
+                "cspanid": {
+                  "id": "http://jsonschema.net/objects/3/person/cspanid",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/objects/3/person/firstname",
+                  "type": "string"
+                },
+                "gender": {
+                  "id": "http://jsonschema.net/objects/3/person/gender",
+                  "type": "string"
+                },
+                "gender_label": {
+                  "id": "http://jsonschema.net/objects/3/person/gender_label",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "http://jsonschema.net/objects/3/person/id",
+                  "type": "integer"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/objects/3/person/lastname",
+                  "type": "string"
+                },
+                "link": {
+                  "id": "http://jsonschema.net/objects/3/person/link",
+                  "type": "string"
+                },
+                "middlename": {
+                  "id": "http://jsonschema.net/objects/3/person/middlename",
+                  "type": "string"
+                },
+                "name": {
+                  "id": "http://jsonschema.net/objects/3/person/name",
+                  "type": "string"
+                },
+                "namemod": {
+                  "id": "http://jsonschema.net/objects/3/person/namemod",
+                  "type": "string"
+                },
+                "nickname": {
+                  "id": "http://jsonschema.net/objects/3/person/nickname",
+                  "type": "string"
+                },
+                "osid": {
+                  "id": "http://jsonschema.net/objects/3/person/osid",
+                  "type": "string"
+                },
+                "pvsid": {
+                  "id": "http://jsonschema.net/objects/3/person/pvsid",
+                  "type": "string"
+                },
+                "sortname": {
+                  "id": "http://jsonschema.net/objects/3/person/sortname",
+                  "type": "string"
+                },
+                "twitterid": {
+                  "id": "http://jsonschema.net/objects/3/person/twitterid",
+                  "type": "string"
+                },
+                "youtubeid": {
+                  "id": "http://jsonschema.net/objects/3/person/youtubeid",
+                  "type": "string"
+                }
+              }
+            },
+            "phone": {
+              "id": "http://jsonschema.net/objects/3/phone",
+              "type": "string"
+            },
+            "role_type": {
+              "id": "http://jsonschema.net/objects/3/role_type",
+              "type": "string"
+            },
+            "role_type_label": {
+              "id": "http://jsonschema.net/objects/3/role_type_label",
+              "type": "string"
+            },
+            "senator_class": {
+              "id": "http://jsonschema.net/objects/3/senator_class",
+              "type": "null"
+            },
+            "senator_rank": {
+              "id": "http://jsonschema.net/objects/3/senator_rank",
+              "type": "null"
+            },
+            "startdate": {
+              "id": "http://jsonschema.net/objects/3/startdate",
+              "type": "string"
+            },
+            "state": {
+              "id": "http://jsonschema.net/objects/3/state",
+              "type": "string"
+            },
+            "title": {
+              "id": "http://jsonschema.net/objects/3/title",
+              "type": "string"
+            },
+            "title_long": {
+              "id": "http://jsonschema.net/objects/3/title_long",
+              "type": "string"
+            },
+            "website": {
+              "id": "http://jsonschema.net/objects/3/website",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "id": "http://jsonschema.net/objects/4",
+          "type": "object",
+          "properties": {
+            "caucus": {
+              "id": "http://jsonschema.net/objects/4/caucus",
+              "type": "null"
+            },
+            "congress_numbers": {
+              "id": "http://jsonschema.net/objects/4/congress_numbers",
+              "type": "array",
+              "items": {
+                "id": "http://jsonschema.net/objects/4/congress_numbers/0",
+                "type": "integer"
+              }
+            },
+            "current": {
+              "id": "http://jsonschema.net/objects/4/current",
+              "type": "boolean"
+            },
+            "description": {
+              "id": "http://jsonschema.net/objects/4/description",
+              "type": "string"
+            },
+            "district": {
+              "id": "http://jsonschema.net/objects/4/district",
+              "type": "integer"
+            },
+            "enddate": {
+              "id": "http://jsonschema.net/objects/4/enddate",
+              "type": "string"
+            },
+            "id": {
+              "id": "http://jsonschema.net/objects/4/id",
+              "type": "integer"
+            },
+            "leadership_title": {
+              "id": "http://jsonschema.net/objects/4/leadership_title",
+              "type": "null"
+            },
+            "party": {
+              "id": "http://jsonschema.net/objects/4/party",
+              "type": "string"
+            },
+            "person": {
+              "id": "http://jsonschema.net/objects/4/person",
+              "type": "object",
+              "properties": {
+                "bioguideid": {
+                  "id": "http://jsonschema.net/objects/4/person/bioguideid",
+                  "type": "string"
+                },
+                "birthday": {
+                  "id": "http://jsonschema.net/objects/4/person/birthday",
+                  "type": "string"
+                },
+                "cspanid": {
+                  "id": "http://jsonschema.net/objects/4/person/cspanid",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/objects/4/person/firstname",
+                  "type": "string"
+                },
+                "gender": {
+                  "id": "http://jsonschema.net/objects/4/person/gender",
+                  "type": "string"
+                },
+                "gender_label": {
+                  "id": "http://jsonschema.net/objects/4/person/gender_label",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "http://jsonschema.net/objects/4/person/id",
+                  "type": "integer"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/objects/4/person/lastname",
+                  "type": "string"
+                },
+                "link": {
+                  "id": "http://jsonschema.net/objects/4/person/link",
+                  "type": "string"
+                },
+                "middlename": {
+                  "id": "http://jsonschema.net/objects/4/person/middlename",
+                  "type": "string"
+                },
+                "name": {
+                  "id": "http://jsonschema.net/objects/4/person/name",
+                  "type": "string"
+                },
+                "namemod": {
+                  "id": "http://jsonschema.net/objects/4/person/namemod",
+                  "type": "string"
+                },
+                "nickname": {
+                  "id": "http://jsonschema.net/objects/4/person/nickname",
+                  "type": "string"
+                },
+                "osid": {
+                  "id": "http://jsonschema.net/objects/4/person/osid",
+                  "type": "string"
+                },
+                "pvsid": {
+                  "id": "http://jsonschema.net/objects/4/person/pvsid",
+                  "type": "string"
+                },
+                "sortname": {
+                  "id": "http://jsonschema.net/objects/4/person/sortname",
+                  "type": "string"
+                },
+                "twitterid": {
+                  "id": "http://jsonschema.net/objects/4/person/twitterid",
+                  "type": "string"
+                },
+                "youtubeid": {
+                  "id": "http://jsonschema.net/objects/4/person/youtubeid",
+                  "type": "string"
+                }
+              }
+            },
+            "phone": {
+              "id": "http://jsonschema.net/objects/4/phone",
+              "type": "string"
+            },
+            "role_type": {
+              "id": "http://jsonschema.net/objects/4/role_type",
+              "type": "string"
+            },
+            "role_type_label": {
+              "id": "http://jsonschema.net/objects/4/role_type_label",
+              "type": "string"
+            },
+            "senator_class": {
+              "id": "http://jsonschema.net/objects/4/senator_class",
+              "type": "null"
+            },
+            "senator_rank": {
+              "id": "http://jsonschema.net/objects/4/senator_rank",
+              "type": "null"
+            },
+            "startdate": {
+              "id": "http://jsonschema.net/objects/4/startdate",
+              "type": "string"
+            },
+            "state": {
+              "id": "http://jsonschema.net/objects/4/state",
+              "type": "string"
+            },
+            "title": {
+              "id": "http://jsonschema.net/objects/4/title",
+              "type": "string"
+            },
+            "title_long": {
+              "id": "http://jsonschema.net/objects/4/title_long",
+              "type": "string"
+            },
+            "website": {
+              "id": "http://jsonschema.net/objects/4/website",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "id": "http://jsonschema.net/objects/5",
+          "type": "object",
+          "properties": {
+            "caucus": {
+              "id": "http://jsonschema.net/objects/5/caucus",
+              "type": "null"
+            },
+            "congress_numbers": {
+              "id": "http://jsonschema.net/objects/5/congress_numbers",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http://jsonschema.net/objects/5/congress_numbers/0",
+                  "type": "integer"
+                },
+                {
+                  "id": "http://jsonschema.net/objects/5/congress_numbers/1",
+                  "type": "integer"
+                },
+                {
+                  "id": "http://jsonschema.net/objects/5/congress_numbers/2",
+                  "type": "integer"
+                }
+              ]
+            },
+            "current": {
+              "id": "http://jsonschema.net/objects/5/current",
+              "type": "boolean"
+            },
+            "description": {
+              "id": "http://jsonschema.net/objects/5/description",
+              "type": "string"
+            },
+            "district": {
+              "id": "http://jsonschema.net/objects/5/district",
+              "type": "null"
+            },
+            "enddate": {
+              "id": "http://jsonschema.net/objects/5/enddate",
+              "type": "string"
+            },
+            "id": {
+              "id": "http://jsonschema.net/objects/5/id",
+              "type": "integer"
+            },
+            "leadership_title": {
+              "id": "http://jsonschema.net/objects/5/leadership_title",
+              "type": "null"
+            },
+            "party": {
+              "id": "http://jsonschema.net/objects/5/party",
+              "type": "string"
+            },
+            "person": {
+              "id": "http://jsonschema.net/objects/5/person",
+              "type": "object",
+              "properties": {
+                "bioguideid": {
+                  "id": "http://jsonschema.net/objects/5/person/bioguideid",
+                  "type": "string"
+                },
+                "birthday": {
+                  "id": "http://jsonschema.net/objects/5/person/birthday",
+                  "type": "string"
+                },
+                "cspanid": {
+                  "id": "http://jsonschema.net/objects/5/person/cspanid",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/objects/5/person/firstname",
+                  "type": "string"
+                },
+                "gender": {
+                  "id": "http://jsonschema.net/objects/5/person/gender",
+                  "type": "string"
+                },
+                "gender_label": {
+                  "id": "http://jsonschema.net/objects/5/person/gender_label",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "http://jsonschema.net/objects/5/person/id",
+                  "type": "integer"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/objects/5/person/lastname",
+                  "type": "string"
+                },
+                "link": {
+                  "id": "http://jsonschema.net/objects/5/person/link",
+                  "type": "string"
+                },
+                "middlename": {
+                  "id": "http://jsonschema.net/objects/5/person/middlename",
+                  "type": "string"
+                },
+                "name": {
+                  "id": "http://jsonschema.net/objects/5/person/name",
+                  "type": "string"
+                },
+                "namemod": {
+                  "id": "http://jsonschema.net/objects/5/person/namemod",
+                  "type": "string"
+                },
+                "nickname": {
+                  "id": "http://jsonschema.net/objects/5/person/nickname",
+                  "type": "string"
+                },
+                "osid": {
+                  "id": "http://jsonschema.net/objects/5/person/osid",
+                  "type": "string"
+                },
+                "pvsid": {
+                  "id": "http://jsonschema.net/objects/5/person/pvsid",
+                  "type": "string"
+                },
+                "sortname": {
+                  "id": "http://jsonschema.net/objects/5/person/sortname",
+                  "type": "string"
+                },
+                "twitterid": {
+                  "id": "http://jsonschema.net/objects/5/person/twitterid",
+                  "type": "string"
+                },
+                "youtubeid": {
+                  "id": "http://jsonschema.net/objects/5/person/youtubeid",
+                  "type": "string"
+                }
+              }
+            },
+            "phone": {
+              "id": "http://jsonschema.net/objects/5/phone",
+              "type": "string"
+            },
+            "role_type": {
+              "id": "http://jsonschema.net/objects/5/role_type",
+              "type": "string"
+            },
+            "role_type_label": {
+              "id": "http://jsonschema.net/objects/5/role_type_label",
+              "type": "string"
+            },
+            "senator_class": {
+              "id": "http://jsonschema.net/objects/5/senator_class",
+              "type": "string"
+            },
+            "senator_class_label": {
+              "id": "http://jsonschema.net/objects/5/senator_class_label",
+              "type": "string"
+            },
+            "senator_rank": {
+              "id": "http://jsonschema.net/objects/5/senator_rank",
+              "type": "string"
+            },
+            "senator_rank_label": {
+              "id": "http://jsonschema.net/objects/5/senator_rank_label",
+              "type": "string"
+            },
+            "startdate": {
+              "id": "http://jsonschema.net/objects/5/startdate",
+              "type": "string"
+            },
+            "state": {
+              "id": "http://jsonschema.net/objects/5/state",
+              "type": "string"
+            },
+            "title": {
+              "id": "http://jsonschema.net/objects/5/title",
+              "type": "string"
+            },
+            "title_long": {
+              "id": "http://jsonschema.net/objects/5/title_long",
+              "type": "string"
+            },
+            "website": {
+              "id": "http://jsonschema.net/objects/5/website",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "id": "http://jsonschema.net/objects/6",
+          "type": "object",
+          "properties": {
+            "caucus": {
+              "id": "http://jsonschema.net/objects/6/caucus",
+              "type": "null"
+            },
+            "congress_numbers": {
+              "id": "http://jsonschema.net/objects/6/congress_numbers",
+              "type": "array",
+              "items": {
+                "id": "http://jsonschema.net/objects/6/congress_numbers/0",
+                "type": "integer"
+              }
+            },
+            "current": {
+              "id": "http://jsonschema.net/objects/6/current",
+              "type": "boolean"
+            },
+            "description": {
+              "id": "http://jsonschema.net/objects/6/description",
+              "type": "string"
+            },
+            "district": {
+              "id": "http://jsonschema.net/objects/6/district",
+              "type": "integer"
+            },
+            "enddate": {
+              "id": "http://jsonschema.net/objects/6/enddate",
+              "type": "string"
+            },
+            "id": {
+              "id": "http://jsonschema.net/objects/6/id",
+              "type": "integer"
+            },
+            "leadership_title": {
+              "id": "http://jsonschema.net/objects/6/leadership_title",
+              "type": "null"
+            },
+            "party": {
+              "id": "http://jsonschema.net/objects/6/party",
+              "type": "string"
+            },
+            "person": {
+              "id": "http://jsonschema.net/objects/6/person",
+              "type": "object",
+              "properties": {
+                "bioguideid": {
+                  "id": "http://jsonschema.net/objects/6/person/bioguideid",
+                  "type": "string"
+                },
+                "birthday": {
+                  "id": "http://jsonschema.net/objects/6/person/birthday",
+                  "type": "string"
+                },
+                "cspanid": {
+                  "id": "http://jsonschema.net/objects/6/person/cspanid",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/objects/6/person/firstname",
+                  "type": "string"
+                },
+                "gender": {
+                  "id": "http://jsonschema.net/objects/6/person/gender",
+                  "type": "string"
+                },
+                "gender_label": {
+                  "id": "http://jsonschema.net/objects/6/person/gender_label",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "http://jsonschema.net/objects/6/person/id",
+                  "type": "integer"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/objects/6/person/lastname",
+                  "type": "string"
+                },
+                "link": {
+                  "id": "http://jsonschema.net/objects/6/person/link",
+                  "type": "string"
+                },
+                "middlename": {
+                  "id": "http://jsonschema.net/objects/6/person/middlename",
+                  "type": "string"
+                },
+                "name": {
+                  "id": "http://jsonschema.net/objects/6/person/name",
+                  "type": "string"
+                },
+                "namemod": {
+                  "id": "http://jsonschema.net/objects/6/person/namemod",
+                  "type": "string"
+                },
+                "nickname": {
+                  "id": "http://jsonschema.net/objects/6/person/nickname",
+                  "type": "string"
+                },
+                "osid": {
+                  "id": "http://jsonschema.net/objects/6/person/osid",
+                  "type": "string"
+                },
+                "pvsid": {
+                  "id": "http://jsonschema.net/objects/6/person/pvsid",
+                  "type": "string"
+                },
+                "sortname": {
+                  "id": "http://jsonschema.net/objects/6/person/sortname",
+                  "type": "string"
+                },
+                "twitterid": {
+                  "id": "http://jsonschema.net/objects/6/person/twitterid",
+                  "type": "string"
+                },
+                "youtubeid": {
+                  "id": "http://jsonschema.net/objects/6/person/youtubeid",
+                  "type": "string"
+                }
+              }
+            },
+            "phone": {
+              "id": "http://jsonschema.net/objects/6/phone",
+              "type": "string"
+            },
+            "role_type": {
+              "id": "http://jsonschema.net/objects/6/role_type",
+              "type": "string"
+            },
+            "role_type_label": {
+              "id": "http://jsonschema.net/objects/6/role_type_label",
+              "type": "string"
+            },
+            "senator_class": {
+              "id": "http://jsonschema.net/objects/6/senator_class",
+              "type": "null"
+            },
+            "senator_rank": {
+              "id": "http://jsonschema.net/objects/6/senator_rank",
+              "type": "null"
+            },
+            "startdate": {
+              "id": "http://jsonschema.net/objects/6/startdate",
+              "type": "string"
+            },
+            "state": {
+              "id": "http://jsonschema.net/objects/6/state",
+              "type": "string"
+            },
+            "title": {
+              "id": "http://jsonschema.net/objects/6/title",
+              "type": "string"
+            },
+            "title_long": {
+              "id": "http://jsonschema.net/objects/6/title_long",
+              "type": "string"
+            },
+            "website": {
+              "id": "http://jsonschema.net/objects/6/website",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "meta",
+    "objects"
+  ]
+}
