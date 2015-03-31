@@ -3,7 +3,6 @@ package com.github.webservicetesting
 import com.jayway.restassured.RestAssured
 import com.jayway.restassured.http.ContentType
 import groovy.util.logging.Log
-import org.hamcrest.core.IsEqual
 import org.junit.experimental.categories.Category
 import spock.lang.Narrative
 import spock.lang.Shared
@@ -19,7 +18,7 @@ import static com.jayway.restassured.RestAssured.given
 import static org.hamcrest.core.IsEqual.equalTo
 
 @Log
-@Category(BaseSpecification.TodoService)
+@Category(TodoServiceTests)
 @Narrative("""
 As a contituent, I need to know the names of the members of Congress for my state
 """)
