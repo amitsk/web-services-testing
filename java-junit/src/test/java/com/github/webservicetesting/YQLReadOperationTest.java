@@ -39,7 +39,7 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
 
     // https://github.com/TNG/junit-dataprovider/wiki/Features
     @DataProvider(splitBy = "\\|", trimValues = true, format = "%m: Search %p[0] for  %p[1] to find  %p[2]")
-    public static String[] dataProviderFileExistence() {
+    public static String[] zipSearchResult() {
         // @formatter:off
         return new String[]{
                 "97229  | pizza  | Pizza Caboose",
@@ -49,18 +49,20 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
         // @formatter:on
     }
     @Test
-    @UseDataProvider("dataProviderMultiply")
+    @UseDataProvider("zipSearchResult")
     public void localSearchByZipCodeReturnsExpectedResults( String zipCode, String query, String businessToTest) {
-        Response response = given().header(new Header("Accept-Encoding", "gzip, deflate"))
+        Response response = given().header(new Header("Accept-Encoding", "gzip, deflate")).log().all()
                 .queryParam("q", generateSearchQuery(zipCode, query))
+                .queryParam("format", "json")
                 .accept(ContentType.JSON).get();
+        response.then().log().all();
         //http://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html#soft-assertions
         // We use soft assertions to assert all at the end.
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat( response.getStatusCode()).isEqualTo(200);
         softly.assertThat(response.getHeader("Content-Type")).contains("application/json");
 
-        List<String> customerNames  = response.jsonPath().get("query.results.Result[*].Title");
+        List<String> customerNames  = response.jsonPath().getList("query.results.Result.Title");
         softly.assertThat(customerNames).contains(businessToTest);
 
         softly.assertAll(); //Don't forget this line.
@@ -70,7 +72,7 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
         Map valuesMap = new HashMap();
         valuesMap.put("zip", zip);
         valuesMap.put("query", query);
-        String templateString = "select * from local.search where zip=$zip and query=$query";
+        String templateString = "select * from local.search where zip=${zip} and query='${query}'";
         StrSubstitutor sub = new StrSubstitutor(valuesMap);
         String resolvedString = sub.replace(templateString);
         return StringEscapeUtils.escapeHtml4(resolvedString);
