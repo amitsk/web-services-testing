@@ -1,7 +1,9 @@
 package com.github.webservicetesting;
 
+import com.github.webservicetesting.model.SearchResult;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Header;
 import com.jayway.restassured.response.Response;
 
@@ -64,6 +66,27 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
 
         List<String> customerNames  = response.jsonPath().getList("query.results.Result.Title");
         softly.assertThat(customerNames).contains(businessToTest);
+
+        softly.assertAll(); //Don't forget this line.
+    }
+
+    @Test
+    @UseDataProvider("zipSearchResult")
+    public void localSearchByZipCodeReturnsCompleteResponse( String zipCode, String query, String businessToTest) {
+        Response response = given().header(new Header("Accept-Encoding", "gzip, deflate")).log().all()
+                .queryParam("q", generateSearchQuery(zipCode, query))
+                .queryParam("format", "json")
+                .accept(ContentType.JSON).get();
+        response.then().log().all();
+        //http://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html#soft-assertions
+        // We use soft assertions to assert all at the end.
+        SoftAssertions softly = new SoftAssertions();
+        softly.assertThat( response.getStatusCode()).isEqualTo(200);
+        softly.assertThat(response.getHeader("Content-Type")).contains("application/json");
+        //List<MyClass> myObjects = Arrays.asList(mapper.readValue(json, MyClass[].class))
+        String json  = response.asString();
+        List<SearchResult> results = JsonPath.from(json).get("query.results.Result");
+        softly.assertThat(results).isNotEmpty();
 
         softly.assertAll(); //Don't forget this line.
     }
