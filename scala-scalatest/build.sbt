@@ -22,6 +22,10 @@ libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala_2.
 
 libraryDependencies += "junit" % "junit" % "4.12" % "test"
 
+libraryDependencies += "com.lihaoyi" %% "ammonite-repl" % "0.2.7" % "test"
+
+initialCommands in console := "ammonite.repl.Repl.main(null)"
+
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oDF")
 
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-h","target/test-reports/html")
