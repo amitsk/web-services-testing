@@ -35,7 +35,7 @@ class TodoItemReadOperationSpec extends BaseSpecification {
         sleep( 500 )
         listOfTodoItems.forEach { TodoItem item ->
             given().contentType(ContentType.JSON).log().all()
-                    .body(objectMapper.writeValueAsString( item ))
+                    .body(item)
                     .post("/todo").then().log().status().statusCode( 201 )
         }
     }

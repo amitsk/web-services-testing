@@ -1,9 +1,8 @@
 package com.github.webservicetesting;
 
-import com.github.webservicetesting.model.SearchResult;
+import com.github.webservicetesting.model.QueryResult;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Header;
 import com.jayway.restassured.response.Response;
 
@@ -20,6 +19,7 @@ import org.junit.runner.RunWith;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.startsWith;
@@ -71,23 +71,31 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
     }
 
     @Test
-    @UseDataProvider("zipSearchResult")
-    public void localSearchByZipCodeReturnsCompleteResponse( String zipCode, String query, String businessToTest) {
+    public void localSearchByZipCodeReturnsCompleteResponse( ) {
+        String zipCode = "97006";
+        String query = "pizza";
+        String businessToTest = "Bellagios Pizza";
+
         Response response = given().header(new Header("Accept-Encoding", "gzip, deflate")).log().all()
                 .queryParam("q", generateSearchQuery(zipCode, query))
                 .queryParam("format", "json")
                 .accept(ContentType.JSON).get();
-        response.then().log().all();
         //http://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html#soft-assertions
         // We use soft assertions to assert all at the end.
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat( response.getStatusCode()).isEqualTo(200);
         softly.assertThat(response.getHeader("Content-Type")).contains("application/json");
-        //List<MyClass> myObjects = Arrays.asList(mapper.readValue(json, MyClass[].class))
-        String json  = response.asString();
-        List<SearchResult> results = JsonPath.from(json).get("query.results.Result");
-        softly.assertThat(results).isNotEmpty();
-
+        QueryResult queryResult = response.then().log().all().extract().as(QueryResult.class);
+        QueryResult.Query queryResultQuery = queryResult.getQuery();
+        softly.assertThat( queryResultQuery.getCount()).isEqualTo(10);
+        softly.assertThat(queryResultQuery.getLang()).isEqualToIgnoringCase("en-us");
+        //Java8's concise Lambda syntax. Only those results with > 0 reviews
+        List<QueryResult.Query.SearchResult> resultsWithReviews = queryResultQuery.getResults().getResult().stream()
+                .filter(s -> s.getRating().getTotalReviews().compareTo("0") != 0)
+                .collect(Collectors.toList());
+        //Now get the names of the business
+        softly.assertThat(resultsWithReviews.stream().map ( QueryResult.Query.SearchResult::getTitle )
+                .collect( Collectors.toList())).contains(businessToTest);
         softly.assertAll(); //Don't forget this line.
     }
 

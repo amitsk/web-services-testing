@@ -29,7 +29,7 @@ class TodoItemUpdateOperationsSpec extends BaseSpecification {
           def todoResourceUrl = todoBase + todoName
           TodoItem item = new TodoItem(todoName, oldTask)
         when: "We create a TODO Item and gt back the right status code"
-          given().log().all().contentType(ContentType.JSON).body(objectMapper.writeValueAsString(item))
+          given().log().all().contentType(ContentType.JSON).body(item)
                   .when().post(todoBase).then().log().all().assertThat().statusCode(201)
         then: "We get back the TODO Item"
           sleep(300)
@@ -39,7 +39,7 @@ class TodoItemUpdateOperationsSpec extends BaseSpecification {
           todoItem.task == oldTask
         when: "We update  a TODO Item and get back the right status code"
           todoItem.task = newTask
-          given().log().all().contentType(ContentType.JSON).body(objectMapper.writeValueAsString(todoItem))
+          given().log().all().contentType(ContentType.JSON).body(todoItem)
                   .when().put(todoResourceUrl).then().statusCode(204)
         then: "We get back the TODO item with the new task name"
           sleep(300)
