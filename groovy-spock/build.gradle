@@ -10,6 +10,7 @@ ext {
     sl4jVersion = '1.7.12'
     log4jVersion = '2.2'
     spockReportsVersion = '1.2.5'
+    assertjVersion = '2.0.0'
 }
 
 apply plugin: 'groovy'
@@ -43,7 +44,8 @@ dependencies {
             "com.jayway.restassured:json-path:$restAssuredVersion",
             "com.jayway.restassured:json-schema-validator:$restAssuredVersion",
             "com.typesafe:config:$typesafeConfigVersion",
-            "com.athaydes:spock-reports:$spockReportsVersion"
+            "com.athaydes:spock-reports:$spockReportsVersion",
+            "org.assertj:assertj-core:$assertjVersion"
     )
 }
 

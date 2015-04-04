@@ -1,6 +1,7 @@
 package com.github.webservicetesting
 
 import com.jayway.restassured.http.ContentType
+import groovy.util.logging.Log
 import groovy.util.logging.Slf4j
 import org.junit.experimental.categories.Category
 import spock.lang.Narrative
@@ -9,11 +10,12 @@ import static com.jayway.restassured.RestAssured.delete
 import static com.jayway.restassured.RestAssured.get
 import static com.jayway.restassured.RestAssured.given
 
+
 /*
  * @author amit, @date 3/22/15 9:27 PM
  */
 
-@Slf4j
+@Log
 @Category(TodoServiceTests)
 @Narrative("""
 As a user I can create, update and delete a TodoItem

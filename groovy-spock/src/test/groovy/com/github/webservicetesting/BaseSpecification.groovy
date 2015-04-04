@@ -13,7 +13,7 @@ import com.typesafe.config.ConfigFactory
 /**
  * Created by amit on 3/29/15.
  */
-@Slf4j
+@Log
 class BaseSpecification extends Specification {
     @Shared Config config
     @Shared ObjectMapper objectMapper = new ObjectMapper()

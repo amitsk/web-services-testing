@@ -19,7 +19,7 @@ import static com.jayway.restassured.RestAssured.given
 import static com.jayway.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath
 import static org.hamcrest.core.IsEqual.equalTo
 
-@Slf4j
+@Log
 @Category(TodoServiceTests)
 @Narrative("""
 As a contituent, I need to know the names of the members of Congress for my state
