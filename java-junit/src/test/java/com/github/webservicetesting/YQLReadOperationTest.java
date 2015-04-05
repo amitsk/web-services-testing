@@ -11,8 +11,10 @@ import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.text.StrSubstitutor;
+import org.assertj.core.api.JUnitSoftAssertions;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -32,6 +34,8 @@ import static org.assertj.core.api.Assertions.*;
  */
 @RunWith(DataProviderRunner.class)
 public class YQLReadOperationTest  extends BaseAcceptanceTest{
+    @Rule
+    public final JUnitSoftAssertions softly = new JUnitSoftAssertions();
 
     @Before
     public void initBaseUrl() {
@@ -82,7 +86,6 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
                 .accept(ContentType.JSON).get();
         //http://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html#soft-assertions
         // We use soft assertions to assert all at the end.
-        SoftAssertions softly = new SoftAssertions();
         softly.assertThat( response.getStatusCode()).isEqualTo(200);
         softly.assertThat(response.getHeader("Content-Type")).contains("application/json");
         QueryResult queryResult = response.then().log().all().extract().as(QueryResult.class);
@@ -96,7 +99,6 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
         //Now get the names of the business
         softly.assertThat(resultsWithReviews.stream().map ( QueryResult.Query.SearchResult::getTitle )
                 .collect( Collectors.toList())).contains(businessToTest);
-        softly.assertAll(); //Don't forget this line.
     }
 
     protected String generateSearchQuery( String zip, String query) {
