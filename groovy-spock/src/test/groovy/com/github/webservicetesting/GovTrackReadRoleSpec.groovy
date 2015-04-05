@@ -8,8 +8,10 @@ import com.jayway.restassured.response.ValidatableResponse
 import com.jayway.restassured.specification.RequestSpecification
 import groovy.util.logging.Log
 import groovy.util.logging.Slf4j
+import org.assertj.core.api.JUnitSoftAssertions
 import org.assertj.core.api.SoftAssertions
 import org.junit.Assert
+import org.junit.Rule
 import org.junit.experimental.categories.Category
 import spock.lang.Narrative
 import spock.lang.Shared
@@ -27,6 +29,8 @@ As a contituent, I need to know the names of the members of Congress for my stat
 """)
 @Category(GovTrackServiceTests)
 class GovTrackReadRoleSpec extends BaseSpecification {
+    @Rule
+    JUnitSoftAssertions softly //Spock instantiates default constructor
 
     @Shared listOfStates = ["OR", "WA"] //Add  the other 48 if required
 
@@ -56,7 +60,7 @@ class GovTrackReadRoleSpec extends BaseSpecification {
 
     def "Search for a Congress Rep for My State and get a valid JSON response "() {
         given: "Set up a request Spec"
-          SoftAssertions softly = new SoftAssertions();
+
           RequestSpecification requestSpecification = RestAssured.given().accept("application/xml")
                   .header(new Header("Accept-Encoding", "gzip, deflate"))
                   .queryParameters(["format": "json", "current": "true"])
@@ -67,7 +71,6 @@ class GovTrackReadRoleSpec extends BaseSpecification {
         then: "Do the assertions"
           softly.assertThat(response.getStatusCode()).isEqualTo( 200 )
           softly.assertThat(response.getContentType()).isEqualTo( "application/json; charset=utf-8" )
-          softly.assertAll()
           def senators  =  role.objects.findAll( { GovTrackRole.Object o -> o.roleType == "senator" })
                   .collect ({ it.person.name} )
           senators.containsAll(["Sen. Ron Wyden [D-OR]","Sen. Jeff Merkley [D-OR]"])

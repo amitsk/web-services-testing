@@ -25,11 +25,12 @@ import static org.hamcrest.core.IsEqual.equalTo
 As a contituent, I need to know the names of the members of Congress for my state
 """)
 class TodoItemReadOperationSpec extends BaseSpecification {
-
     @Shared def listOfTodoItems = [new TodoItem("demo-uno", "Task Uno"), new TodoItem("demo-duo", "Task Duo")]
 
     def setup() {
         RestAssured.baseURI = config.getString("todoservice.baseurl")
+        RestAssured.basePath = config.getString("todoservice.basepath")
+
         given().log().all().delete("/todo").then().assertThat().statusCode( 204 )
 
         sleep( 500 )

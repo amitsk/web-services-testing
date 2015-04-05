@@ -1,5 +1,6 @@
 package com.github.webservicetesting
 
+import com.jayway.restassured.RestAssured
 import com.jayway.restassured.http.ContentType
 import groovy.util.logging.Log
 import groovy.util.logging.Slf4j
@@ -21,6 +22,12 @@ import static com.jayway.restassured.RestAssured.given
 As a user I can create, update and delete a TodoItem
 """)
 class TodoItemUpdateOperationsSpec extends BaseSpecification {
+
+    def setup() {
+        RestAssured.baseURI = config.getString("todoservice.baseurl")
+        RestAssured.basePath = config.getString("todoservice.basepath")
+    }
+
     def "Create , Update and then Delete an Item"() {
         setup:
           def todoName = UUID.randomUUID().toString()
