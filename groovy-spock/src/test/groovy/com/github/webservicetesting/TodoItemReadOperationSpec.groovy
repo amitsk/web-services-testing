@@ -3,18 +3,15 @@ package com.github.webservicetesting
 import com.jayway.restassured.RestAssured
 import com.jayway.restassured.http.ContentType
 import groovy.util.logging.Log
-import groovy.util.logging.Slf4j
 import org.junit.experimental.categories.Category
 import spock.lang.Narrative
 import spock.lang.Shared
+import spock.lang.Unroll
 
 /*
  *
  * @author amit, @date 3/22/15 9:27 PM
  */
-
-import spock.lang.Unroll
-
 import static com.jayway.restassured.RestAssured.given
 import static com.jayway.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath
 import static org.hamcrest.core.IsEqual.equalTo

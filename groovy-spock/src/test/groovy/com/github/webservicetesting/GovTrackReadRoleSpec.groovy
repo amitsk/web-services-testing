@@ -1,23 +1,16 @@
 package com.github.webservicetesting
 
 import com.jayway.restassured.RestAssured
-import com.jayway.restassured.http.ContentType
 import com.jayway.restassured.response.Header
 import com.jayway.restassured.response.Response
 import com.jayway.restassured.response.ValidatableResponse
 import com.jayway.restassured.specification.RequestSpecification
 import groovy.util.logging.Log
-import groovy.util.logging.Slf4j
 import org.assertj.core.api.JUnitSoftAssertions
-import org.assertj.core.api.SoftAssertions
-import org.junit.Assert
 import org.junit.Rule
 import org.junit.experimental.categories.Category
 import spock.lang.Narrative
 import spock.lang.Shared
-
-import static org.assertj.core.api.Assertions.assertThat
-import static org.assertj.core.api.Assertions.assertThatThrownBy
 
 /**
  * https://www.govtrack.us/api/v2/role?current=true&format=json&state=OR
@@ -39,7 +32,7 @@ class GovTrackReadRoleSpec extends BaseSpecification {
         RestAssured.basePath = config.getString("govtrack.basepath")
     }
 
-    def "Search for a Congress Rep for My State and get a valid XML response "() {
+    def "Search for a Member of Congress for My State and get a valid XML response "() {
         given: "Set up a request Spec"
           RequestSpecification requestSpecification = RestAssured.given().accept("application/xml")
                   .header(new Header("Accept-Encoding", "gzip, deflate"))
@@ -58,10 +51,11 @@ class GovTrackReadRoleSpec extends BaseSpecification {
           state << listOfStates
     }
 
-    def "Search for a Congress Rep for My State and get a valid JSON response "() {
-        given: "Set up a request Spec"
+    def "Search for a Member of Congress for My State and get a valid JSON response "() {
+        given: "Set up a request Spec, header, query params, accept encoding of gzip"
 
-          RequestSpecification requestSpecification = RestAssured.given().accept("application/xml")
+          RequestSpecification requestSpecification = RestAssured.given()
+                  .accept("application/xml")
                   .header(new Header("Accept-Encoding", "gzip, deflate"))
                   .queryParameters(["format": "json", "current": "true"])
                   .queryParameter("state", "OR").log().all()
@@ -69,6 +63,8 @@ class GovTrackReadRoleSpec extends BaseSpecification {
           Response response = requestSpecification.get()
           GovTrackRole role =  response.as( GovTrackRole.class)
         then: "Do the assertions"
+          //This is an example of mixing AssertJ's soft assertions and Spock's power assert.
+          //Soft assertions are great for simple validations, power asserts for complex object graphs
           softly.assertThat(response.getStatusCode()).isEqualTo( 200 )
           softly.assertThat(response.getContentType()).isEqualTo( "application/json; charset=utf-8" )
           def senators  =  role.objects.findAll( { GovTrackRole.Object o -> o.roleType == "senator" })
