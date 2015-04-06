@@ -10,7 +10,7 @@ ext {
     sl4jVersion = '1.7.12'
     log4jVersion = '2.2'
     spockReportsVersion = '1.2.5'
-    assertjVersion = '2.0.0'
+    assertjVersion = '3.0.0'
 }
 
 apply plugin: 'groovy'
