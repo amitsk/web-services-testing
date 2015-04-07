@@ -64,14 +64,11 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
         response.then().log().all();
         //http://joel-costigliola.github.io/assertj/assertj-core-features-highlight.html#soft-assertions
         // We use soft assertions to assert all at the end.
-        SoftAssertions softly = new SoftAssertions();
         softly.assertThat( response.getStatusCode()).isEqualTo(200);
         softly.assertThat(response.getHeader("Content-Type")).contains("application/json");
 
         List<String> customerNames  = response.jsonPath().getList("query.results.Result.Title");
         softly.assertThat(customerNames).contains(businessToTest);
-
-        softly.assertAll(); //Don't forget this line.
     }
 
     @Test

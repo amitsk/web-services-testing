@@ -22,7 +22,12 @@ libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala_2.
 
 libraryDependencies += "junit" % "junit" % "4.12" % "test"
 
+libraryDependencies += "org.assertj" % "assertj-core" % "2.0.0" % "test"
+
+libraryDependencies += "com.tngtech.java" % "junit-dataprovider" % "1.9.3" % "test"
+
 libraryDependencies += "com.lihaoyi" %% "ammonite-repl" % "0.2.7" % "test"
+
 
 initialCommands in console := "ammonite.repl.Repl.main(null)"
 
