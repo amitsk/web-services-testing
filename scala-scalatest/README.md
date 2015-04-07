@@ -17,3 +17,7 @@ Run `sbt test`
 * Scala http://www.scala-lang.org/
 * ScalaTest http://scalatest.org/
 * Rest Assured Libraries
+
+##Using the REPL
+
+To use the Ammonite REPL, run `sbt test:console`
