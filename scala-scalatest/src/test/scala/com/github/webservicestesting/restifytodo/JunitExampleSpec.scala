@@ -12,11 +12,11 @@ import org.assertj.core.api.{SoftAssertions, JUnitSoftAssertions}
 import org.junit.runner.RunWith
 import org.junit.{Before, Rule, Test}
 import org.scalatest.Matchers
-import org.scalatest.junit.{ShouldMatchersForJUnit, AssertionsForJUnit}
+import org.scalatest.junit.{JUnitSuite, ShouldMatchersForJUnit, AssertionsForJUnit}
 
 import scala.collection.mutable
 
-class JunitExampleSpec extends AssertionsForJUnit with Matchers {
+class JunitExampleSpec extends JUnitSuite with Matchers {
 
   @Before def initBaseUrl {
     RestAssured.baseURI = "https://query.yahooapis.com"

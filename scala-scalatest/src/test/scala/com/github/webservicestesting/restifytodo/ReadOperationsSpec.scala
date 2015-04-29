@@ -18,6 +18,7 @@ class ReadOperationsSpec extends BaseWebserviceSpec {
   }
 
   before {
+    RestAssured.reset() //clean up all leftover settings.
     //Create multiple records.
     RestAssured.given().log().all().delete("/todo").then().statusCode(204)
     Vector( createTodoJson("demo-one","buy one"),createTodoJson("demo-two","buy two"),createTodoJson("demo-three","buy three")).foreach(

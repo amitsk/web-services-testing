@@ -16,6 +16,7 @@ class UpdateOperationsSpec extends BaseWebserviceSpec {
   val newTodoString = JsonUtil.toJson(TodoItem(todoId,newTask))
 
   before {
+    RestAssured.reset() //clean up all leftover settings.
     RestAssured.given().log().all().delete("/todo").then().statusCode(204)
     RestAssured.given().log().all().header("Content-Type","application/json")
         .body(todoString).post("/todo")
