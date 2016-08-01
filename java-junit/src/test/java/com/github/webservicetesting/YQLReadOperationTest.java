@@ -48,9 +48,9 @@ public class YQLReadOperationTest  extends BaseAcceptanceTest{
     public static String[] zipSearchResult() {
         // @formatter:off
         return new String[]{
-                "97229  | pizza  | Pizza Caboose",
-                "97006  | burger | Red Robin",
-                "97223  | coffee | Morning Rush Expresso"
+                "97229  | pizza  | Pizza Hut",
+                "97006  | burger | Burger King",
+                "97223  | coffee | Well & Good Coffee House"
         };
         // @formatter:on
     }
