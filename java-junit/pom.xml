@@ -11,9 +11,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
-		<rest-assured.version>2.4.0</rest-assured.version>
+		<rest-assured.version>3.0.0</rest-assured.version>
 		<jackson.version>2.5.2</jackson.version>
-		<typesafe-config.version>1.3.0-M1</typesafe-config.version>
+		<typesafe-config.version>1.3.0-M3</typesafe-config.version>
 		<junit-toolbox.version>2.1</junit-toolbox.version>
 		<junit-dataprovider.version>1.9.3</junit-dataprovider.version>
 		<assertj-core.version>2.0.0</assertj-core.version>
@@ -80,24 +80,24 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.jayway.restassured</groupId>
+			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
 			<version>${rest-assured.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.jayway.restassured</groupId>
+			<groupId>io.rest-assured</groupId>
 			<artifactId>json-path</artifactId>
 			<version>${rest-assured.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.jayway.restassured</groupId>
+			<groupId>io.rest-assured</groupId>
 			<artifactId>xml-path</artifactId>
 			<version>${rest-assured.version}</version>
 			<scope>test</scope>
 		</dependency><dependency>
-			<groupId>com.jayway.restassured</groupId>
+			<groupId>io.rest-assured</groupId>
 			<artifactId>json-schema-validator</artifactId>
 			<version>${rest-assured.version}</version>
 			<scope>test</scope>
