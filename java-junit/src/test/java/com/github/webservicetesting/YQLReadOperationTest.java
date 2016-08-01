@@ -1,18 +1,16 @@
 package com.github.webservicetesting;
 
 import com.github.webservicetesting.model.QueryResult;
-import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.response.Header;
-import com.jayway.restassured.response.Response;
-
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.http.Header;
+import io.restassured.response.Response;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.text.StrSubstitutor;
 import org.assertj.core.api.JUnitSoftAssertions;
-import org.assertj.core.api.SoftAssertions;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,10 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static com.jayway.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.startsWith;
-
-import static org.assertj.core.api.Assertions.*;
+import static io.restassured.RestAssured.given;
 
 /**
  * Created by amit on 3/31/15.
