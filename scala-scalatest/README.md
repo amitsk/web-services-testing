@@ -1,10 +1,10 @@
 #Scala Examples
 
-This example uses sbt and Scalatest for the examplhttps://github.com/junit-team/junit/wikies. 
+This example uses sbt and Scalatest for the examples
 
 ##Private API
 
-The examples need the Restify TODO app. 
+The examples need the use my sample webservice  https://github.com/amitsk/sparkjava-todobackend.git
 
 ##Building
 
