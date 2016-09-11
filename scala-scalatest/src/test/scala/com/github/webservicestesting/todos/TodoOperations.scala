@@ -1,10 +1,10 @@
-package com.github.webservicestesting.restifytodo
+package com.github.webservicestesting.todos
 
 import io.restassured.config.RestAssuredConfig.{config => _, _}
 import io.restassured.http.Header
 
 
-abstract class TodoOperationsSpec extends BaseWebserviceSpec {
+object  TodoOperations {
   val baseTodoUrl = "/todos"
 
   def createTodoJson(nm: String, tsk: String): String = {

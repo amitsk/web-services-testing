@@ -1,10 +1,11 @@
-package com.github.webservicestesting.restifytodo
+package com.github.webservicestesting.todos
 
 import com.github.webservicetesting.restingtodo.TodoItem
 import io.restassured.RestAssured
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 import io.restassured.module.scala.RestAssuredSupport.AddThenToResponse
+import TodoOperations._
 
 import scala.sys._
 
@@ -12,7 +13,7 @@ import scala.sys._
  * Created by amit on 3/24/15.
  */
 
-class UpdateOperationsSpec extends TodoOperationsSpec {
+class UpdateOperationsSpec extends BaseWebserviceSpec {
 
   val todoName = "update-todo"
   val oldTask = "buy milk"
@@ -36,9 +37,8 @@ class UpdateOperationsSpec extends TodoOperationsSpec {
     todoItemLocation = s"$baseTodoUrl/${todoId}"
   }
 
-  info("As a user of the TODO service I can modify and delete my TODO")
-
   feature("Update and Delete a TODO works as expected") {
+    info("As a user of the TODO service I can modify and delete my TODO")
 
     scenario("We update the task for our TODO ") {
       Given("We have a TODO created. We fetch it")

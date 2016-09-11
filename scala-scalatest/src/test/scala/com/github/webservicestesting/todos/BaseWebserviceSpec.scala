@@ -1,4 +1,4 @@
-package com.github.webservicestesting.restifytodo
+package com.github.webservicestesting.todos
 
 import org.scalatest.prop.PropertyChecks
 import org.scalatest._

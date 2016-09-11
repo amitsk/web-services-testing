@@ -1,4 +1,4 @@
-package com.github.webservicestesting.restifytodo
+package com.github.webservicestesting.todos
 
 /**
  * Created by amit on 3/27/15.

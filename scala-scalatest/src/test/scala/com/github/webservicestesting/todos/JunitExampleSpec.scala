@@ -1,4 +1,4 @@
-package com.github.webservicestesting.restifytodo
+package com.github.webservicestesting.todos
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.github.webservicestesting.model.QueryResult
