@@ -10,13 +10,13 @@ The examples need the use my sample webservice  https://github.com/amitsk/sparkj
 
 Install sbt using instructions here : http://www.scala-sbt.org/
 
-Run `sbt test`
+Run `sbt clean test`
 
 ##Components 
 
-* Scala http://www.scala-lang.org/
-* ScalaTest http://scalatest.org/
-* Rest Assured Libraries
+* [Scala](http://www.scala-lang.org)
+* [ScalaTest](http://scalatest.org)
+* [Rest Assured](https://github.com/rest-assured/rest-assured)
 
 ##Using the REPL
 
