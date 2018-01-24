@@ -1,1 +1,5 @@
 *.iml
+build/
+target/
+out/
+.gradle/

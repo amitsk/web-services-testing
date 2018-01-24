@@ -7,8 +7,7 @@ import com.typesafe.config.ConfigFactory;
 import io.restassured.RestAssured;
 import io.restassured.config.ObjectMapperConfig;
 import io.restassured.config.RestAssuredConfig;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.BeforeAll;
 
 /**
  * Created by amit on 3/31/15.
@@ -16,7 +15,7 @@ import org.junit.BeforeClass;
 public class BaseAcceptanceTest {
     protected static Config config;
 
-    @BeforeClass
+    @BeforeAll
     public static void setupEnvironmentConfig() {
         Config baseConfig = ConfigFactory.load("application");//Explicitly named, default is also application.conf
         String env = baseConfig.getString("environment");
