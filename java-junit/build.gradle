@@ -1,14 +1,17 @@
 buildscript {
+    ext.kotlin_version = '1.2.21'
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.3'
         classpath 'com.kncept.junit5.reporter:junit-reporter:1.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 apply plugin: 'java'
+apply plugin: 'kotlin'
 apply plugin: 'maven'
 apply plugin: 'org.junit.platform.gradle.plugin'
 apply plugin: 'com.kncept.junit5.reporter'
@@ -36,6 +39,7 @@ ext {
 repositories {
     maven { url "https://jcenter.bintray.com" }
     maven { url "http://repo.maven.apache.org/maven2" }
+    mavenCentral()
 }
 
 dependencies {
@@ -60,6 +64,7 @@ dependencies {
     // To use Log4J's LogManager
     testRuntime("org.apache.logging.log4j:log4j-core:${log4jVersion}")
     testRuntime("org.apache.logging.log4j:log4j-jul:${log4jVersion}")
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 junitPlatform {
@@ -82,3 +87,13 @@ junitPlatform {
 }
 
 junitPlatformTest.finalizedBy 'junitHtmlReport'
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
