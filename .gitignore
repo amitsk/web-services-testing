@@ -1,5 +1,9 @@
 target
-**/build
-**/target
+**/build/
+**/target/
 **/.idea
-**/.ipr
+**/*.ipr
+**/*.iml
+**/.gradle/
+
+**/out/*

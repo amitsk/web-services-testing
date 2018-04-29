@@ -1,0 +1,54 @@
+import org.gradle.jvm.tasks.Jar
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+  `maven-publish`
+  `java`
+  `project-report`
+  kotlin("jvm") version "1.2.40"
+  id("org.gradle.kotlin.ktlint-convention") version "0.1.4"
+}
+
+
+group = "com.github.amitsk.webservicestesting"
+version = "0.0.1"
+
+val restAssuredVersion = "3.1.0"
+val assertJVersion = "3.9.1"
+val junitVersion = "5.1.1"
+
+
+repositories {
+  jcenter()
+}
+
+val test by tasks.getting(Test::class) {
+  useJUnitPlatform()
+}
+
+dependencies {
+  implementation(kotlin("stdlib", "1.2.40"))
+  compile ("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+")
+  compile ("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.+")
+  compile ("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.+")
+  testCompile ("io.rest-assured:rest-assured:$restAssuredVersion")
+  testCompile ("io.rest-assured:json-path:$restAssuredVersion")
+  testCompile ("io.rest-assured:json-schema-validator:$restAssuredVersion")
+  testImplementation ("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+  testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+}
+
+
+
+tasks.withType<KotlinCompile> {
+  kotlinOptions {
+    targetCompatibility = "1.8"
+    freeCompilerArgs = listOf(
+      "-Xjsr305=strict",
+      "-Xskip-runtime-version-check"
+    )
+  }
+}
+
+
+
