@@ -21,9 +21,69 @@
       "name": "t3",
       "task": "Third task",
       "id": 3
+    },
+    {
+      "name": "t3",
+      "task": "Third task",
+      "id": 4
+    },
+    {
+      "name": "t3",
+      "task": "Third task",
+      "id": 5
+    },
+    {
+      "name": "t3",
+      "task": "Third task",
+      "id": 6
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 7
     }
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "lotto": [
+    {
+      "lotto": {
+        "lottoId": 5,
+        "winning-numbers": [
+          2,
+          45,
+          34,
+          23,
+          7,
+          5,
+          3
+        ],
+        "winners": [
+          {
+            "winnerId": 23,
+            "numbers": [
+              2,
+              45,
+              34,
+              23,
+              3,
+              5
+            ]
+          },
+          {
+            "winnerId": 54,
+            "numbers": [
+              52,
+              3,
+              12,
+              11,
+              18,
+              22
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
