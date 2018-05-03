@@ -1,5 +1,11 @@
 package com.github.amitsk.webservicetesting.todos
 
+import com.github.amitsk.webservicetesting.ApplicationConfig
+import io.restassured.RestAssured
+import io.restassured.RestAssured.given
+import io.restassured.http.ContentType
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.provider.CsvFileSource
 import org.junit.jupiter.params.ParameterizedTest
 
@@ -17,5 +23,35 @@ fun testWithCsvFileSource(first: String, second: Int) {
  */
 
 class TodoOperationsTest {
+  companion object {
+    @JvmStatic
+    fun initBaseUrl() {
+      RestAssured.baseURI = ApplicationConfig.config.getString("todos.baseUrl")
+      RestAssured.useRelaxedHTTPSValidation()
+
+    }
+
+    fun createTodoJson(nm: String, tsk: String): String  {
+      return """
+      {
+        "name" : "$nm",
+        "task" : "$tsk"
+      }
+    """.trimMargin()
+    }
+
+  }
+
+
+
+  @Test
+  @DisplayName("Test the Complete flow of operations")
+  fun todoCrudOperationsTest(): Unit {
+    given()
+      .contentType(ContentType.JSON)
+      .path("")
+
+  }
+
 }
 

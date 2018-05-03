@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "name": "My TODO",
+      "task": "First Todo to test API"
+    },
+    {
+      "name": "t2",
+      "task": "Second task",
+      "id": 2
+    },
+    {
+      "name": "t3",
+      "task": "Third task",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
