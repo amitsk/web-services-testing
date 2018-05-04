@@ -1,10 +1,13 @@
 {
-  "posts": [{
-    "id": 1,
-    "title": "json-server",
-    "author": "typicode"
-  }],
-  "todos": [{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "todos": [
+    {
       "id": 1,
       "name": "My TODO",
       "task": "First Todo to test API"
@@ -38,6 +41,51 @@
       "name": "myName",
       "task": "My Task",
       "id": 7
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 8
+    },
+    {
+      "name": "t3",
+      "task": "Third task",
+      "id": 9
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 10
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 11
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 12
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 13
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 14
+    },
+    {
+      "name": "myName",
+      "task": "My Task",
+      "id": 15
+    },
+    {
+      "id": 16,
+      "name": "myNewName",
+      "task": "My Updated Task"
     }
   ],
   "profile": {
@@ -55,7 +103,8 @@
         5,
         3
       ],
-      "winners": [{
+      "winners": [
+        {
           "winnerId": 23,
           "numbers": [
             2,

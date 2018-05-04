@@ -9,7 +9,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import org.skyscreamer.jsonassert.JSONAssert
 
 
 //https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests
@@ -51,25 +50,24 @@ class TodoOperationsTest {
       given()
         .contentType(ContentType.JSON)
         .body(createTodoJson("myName", "My Task"))
-      .`when`()
+        .`when`().log().all()
         .post("/todos")
-      .then()
-        .contentType(ContentType.JSON)
+        .then()
         .statusCode(201)
-      .extract()
-      .response()
+        .extract()
+        .response()
 
     assertThat(createResponse.jsonPath().getString("name")).isEqualTo("myName")
+    assertThat(createResponse.contentType).contains("application/json")
     val todoId = createResponse.jsonPath().getInt("id")
     val todoItemToUpdate = TodoItem(todoId, "myNewName", "My Updated Task")
     val updateResponse: Response =
       given()
         .contentType(ContentType.JSON)
         .body(todoItemToUpdate)
-        .`when`()
-        .post("/todos")
+        .`when`().log().all()
+        .put("/todos/$todoId")
         .then()
-        .contentType(ContentType.JSON)
         .statusCode(200)
         .extract()
         .response()
